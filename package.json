@@ -1,0 +1,27 @@
+{
+  "name": "mailgun-microservice",
+  "version": "1.0.0",
+  "description": "a microservice for sending emails",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vohzd/mailgun-microservice.git"
+  },
+  "keywords": [
+    "mailgun"
+  ],
+  "author": "vohzd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vohzd/mailgun-microservice/issues"
+  },
+  "homepage": "https://github.com/vohzd/mailgun-microservice#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mailgun-js": "^0.18.1"
+  }
+}
