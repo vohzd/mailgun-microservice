@@ -12,13 +12,13 @@ const port = process.env.PORT || 1337;
 
 // set up app to understand json in post requests & route index page to something
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));4
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.post("/", (req, res) => {
+app.get("/", cors() ,(req, res) => {
   res.send("peanut butter jelly time");
 });
 
-app.post("/submit", (req, res) => {
+app.post("/submit", cors(), (req, res) => {
 
   let mgData = {
     from: req.body.from,
