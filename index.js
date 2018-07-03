@@ -1,6 +1,5 @@
 const app = require("express")();
 const bodyParser = require("body-parser");
-const cors  = require("cors");
 
 const Mailgun = require("mailgun-js");
 const twilio = require("twilio")("ACd74eaa07213fb7ebcfb142b597bccd2f", "8f593b438c35c95ec7068e3143bbbd73");
@@ -13,18 +12,20 @@ const port = process.env.PORT || 1337;
 // set up app to understand json in post requests & route index page to something
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
-app.get("/", cors() ,(req, res) => {
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get("/",(req, res) => {
   res.send("peanut butter jelly time");
 });
-var corsOptions = {
-  origin: true,
-  methods: ['POST'],
-  credentials: true,
-  maxAge: 3600
-};
-app.options('/submit', cors(corsOptions));
-app.post("/submit", cors(), (req, res) => {
+
+
+
+app.post("/submit", (req, res, next) => {
 
   let mgData = {
     from: req.body.from,
