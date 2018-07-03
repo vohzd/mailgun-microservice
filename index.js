@@ -17,7 +17,13 @@ app.use(cors());
 app.get("/", cors() ,(req, res) => {
   res.send("peanut butter jelly time");
 });
-
+var corsOptions = {
+  origin: true,
+  methods: ['POST'],
+  credentials: true,
+  maxAge: 3600
+};
+app.options('/submit', cors(corsOptions));
 app.post("/submit", cors(), (req, res) => {
 
   let mgData = {
