@@ -8,7 +8,7 @@ const mailgun = new Mailgun({
   apiKey: "key-820ec8fedd020cd2c1e32edfa345779b",
   domain: "sandbox231ef7c0b0a24a31b509f2e2b3d3e849.mailgun.org"
 });
-const port = 1337;
+const port = process.env.PORT || 1337;
 
 // set up app to understand json in post requests & route index page to something
 app.use(bodyParser.json());
