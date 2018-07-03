@@ -21,6 +21,7 @@
   "homepage": "https://github.com/vohzd/mailgun-microservice#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "mailgun-js": "^0.18.1",
     "twilio": "^3.17.4"
