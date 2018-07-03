@@ -4,7 +4,7 @@
   "description": "a microservice for sending emails",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

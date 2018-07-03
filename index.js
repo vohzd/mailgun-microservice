@@ -14,6 +14,9 @@ const port = 1337;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));4
 app.use(cors());
+app.post("/", (req, res) => {
+  res.send("peanut butter jelly time");
+});
 
 app.post("/submit", (req, res) => {
 
